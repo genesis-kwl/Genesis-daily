@@ -9,9 +9,10 @@
 
   body {
     font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
     background: #faf9f6;
     color: #1a1a1a;
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     max-width: 640px;
     margin: 0 auto;
@@ -20,9 +21,9 @@
 
   header {
     text-align: center;
-    padding: 32px 0 20px;
+    padding: 36px 0 24px;
     border-bottom: 3px double #1a1a1a;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   header h1 {
@@ -30,11 +31,11 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   header .date {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #666;
     font-style: italic;
   }
@@ -42,7 +43,7 @@
   header .tagline {
     font-size: 0.8rem;
     color: #999;
-    margin-top: 6px;
+    margin-top: 8px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -50,30 +51,31 @@
   .intro {
     font-style: italic;
     color: #444;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     padding: 0 8px;
+    line-height: 1.6;
   }
 
   section {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
   section h2 {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #888;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
-    margin-bottom: 14px;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
   }
 
   .story {
-    margin-bottom: 16px;
-    padding-bottom: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #eee;
   }
 
@@ -83,10 +85,10 @@
   }
 
   .story h3 {
-    font-size: 1.05rem;
+    font-size: 22px;
     font-weight: 600;
-    line-height: 1.35;
-    margin-bottom: 4px;
+    line-height: 1.4;
+    margin-bottom: 8px;
     color: #1a1a1a;
   }
 
@@ -100,35 +102,38 @@
   }
 
   .story .summary {
-    font-size: 0.88rem;
-    color: #555;
-    line-height: 1.5;
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 8px;
   }
 
   .story .source {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #999;
-    margin-top: 3px;
+    margin-top: 4px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .crypto-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 16px;
+    gap: 12px;
+    margin-bottom: 20px;
   }
 
   .crypto-card {
     background: #fff;
     border: 1px solid #e8e8e8;
-    border-radius: 6px;
-    padding: 10px 12px;
+    border-radius: 8px;
+    padding: 12px 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   .crypto-card .symbol {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     color: #888;
@@ -136,14 +141,14 @@
   }
 
   .crypto-card .price {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #1a1a1a;
-    margin: 2px 0;
+    margin: 3px 0;
   }
 
   .crypto-card .change {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 500;
   }
 
@@ -153,37 +158,38 @@
   .divider {
     border: none;
     border-top: 1px solid #ddd;
-    margin: 24px 0;
+    margin: 28px 0;
   }
 
   footer {
     text-align: center;
-    padding: 24px 0 40px;
+    padding: 28px 0 48px;
     border-top: 3px double #1a1a1a;
-    margin-top: 20px;
+    margin-top: 24px;
   }
 
   footer .sign-off {
     font-style: italic;
     color: #444;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
 
   footer .credit {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: #aaa;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
   @media (max-width: 480px) {
-    body { padding: 0 16px; }
+    body { padding: 0 16px; font-size: 18px; }
     header h1 { font-size: 1.7rem; }
-    .story h3 { font-size: 1rem; }
+    .story h3 { font-size: 20px; }
+    .story .summary { font-size: 17px; }
     .crypto-bar { gap: 8px; }
-    .crypto-card { padding: 8px 10px; }
-    .crypto-card .price { font-size: 1rem; }
+    .crypto-card { padding: 10px 12px; }
+    .crypto-card .price { font-size: 1.1rem; }
   }
 </style>
 </head>
@@ -202,33 +208,33 @@
   <div class="crypto-bar">
     <div class="crypto-card">
       <div class="symbol">BTC</div>
-      <div class="price">$71,578</div>
-      <div class="change up">+4.0%</div>
+      <div class="price">$71,325</div>
+      <div class="change up">+3.7%</div>
     </div>
     <div class="crypto-card">
       <div class="symbol">ETH</div>
-      <div class="price">$2,182</div>
-      <div class="change up">+4.8%</div>
+      <div class="price">$2,175</div>
+      <div class="change up">+4.6%</div>
     </div>
     <div class="crypto-card">
       <div class="symbol">SOL</div>
-      <div class="price">$91.44</div>
+      <div class="price">$91.50</div>
       <div class="change up">+4.7%</div>
     </div>
     <div class="crypto-card">
       <div class="symbol">ADA</div>
-      <div class="price">$0.2644</div>
-      <div class="change up">+3.2%</div>
+      <div class="price">$0.2634</div>
+      <div class="change up">+2.8%</div>
     </div>
   </div>
 <div class="story">
-  <h3><a href="https://news.google.com/rss/articles/CBMijARBVV95cUxNbHV1dVQwTElfYmlEN2hQWmhyZ1F1Nm1GMHVLT0swbjBWLTVkakM3WlNQdVRwZ0F5WDlEaGZkekxWM3RUZUh2S1BLOVNPRzM4RXMzTnh6aXk5eHR5TmNOdERGR29sUTFtdUxkVlJnYkcyU1B1RHRXX2J3bDR2b3BQam9WaEpVR043ZXlPNjM5RGNVc3o5VmJXazYxMjRxTGM1S0tKY0t0bm54bndpYkxOTkYtMm1EeUxuTmtIUkRudDI3MFcxbTVaVjNWWGxQWHJKNVp1anlHNVNiVTUyMnlaSi1Dc3ZaUTE0VnRjWm9jblhNU0FfNUhjVG1XdnJObU10TWdLdTYyWkNMWDV1dkExQWlyYV9kbmk4MjFwcENGdFRmVkZiVC1QTmRxTm9PRjh2d3NWZHJFNDJKeFA2c29VOE1HLVg5OHlNanVudjIxSWRmM3cwa25BdVZyaFh1STUtVjZDR3VOQTdCUEQ2UEV6eWx6MlZieWZHYnFVUkZ0NWFyZ1dSRHBZaUducHdjYVpyVndsQkZ5d2FqX21QT205dUlmaWxxX0I5ZWZQWlZsb2NuN2QxbUdqVmF4ckl2Z0JSQ0NtcmI2bWZ3UV9fT2U2bnJZUllSaEdMc0E2Z3VaaGNCV2ZYYTVSSi1qUUFyVzhEZm5Dc2ZwTkN3MDF6blpXTU95UVZVdmVPVmppeg?oc=5">Bitcoin, Ethereum, XRP Fall After Trump Iran Ultimatum. Why Crypto’s Tied to the War. - Barron&#x27;s</a></h3>
-  <div class="summary">Bitcoin, Ethereum, XRP Fall After Trump Iran Ultimatum. Why Crypto’s Tied to the War. Barron&#x27;s</div>
+  <h3><a href="https://news.google.com/rss/articles/CBMijARBVV95cUxNckY5Y0ZiYzc1MlJpeVdROVJWSU9fR1lsM3lpalI3XzBnQ2hVWEJDSlJpWmFXYVZCOExkLW50ejM0QXctNVN6d2lYZlVrdDlvZGhocDdmSUZCbkJOVExTYVA2SkdBUnBSclozUF9hYUlncnNVOVpIV2Vwc044a2VzZi1MSy1CeXFRQjdSZUVFbGlZNmhyOUVvUzExekhTVHctc3RxSEdjN09lTjJFQ1RyRDdBVjdtR3pRWG1Gc3dUMXdvVTVrQU5zVUFJNnhHdUtaUFMtSGFJa3N0cWNuODlyQ0ZVZnhKcmpsX0M0QjhyaDFWZTl3OWxyRmVrZEs2QWFEa1E4WVZDeGFTUXNjcTlDdFhZUV91UVI4X3o5bGYtbjF0UkhhVzJUT2NJazdMNUhRdDN3cFRDSEVRM1hSTExCN2dUUVVibjlQWXB1b1JmZmFDMENhSFpiYmNuVElZaXpIUWo2X09FZVNlWW5ISWJrRUhHMEF2REp4V1F6X3NaSDkteXhCdnkxLW1GM2VHaWFObUo2ZVU5Y1RlbGtIaEcxNXJMVmNqUXpONnF2ZmhkU2p2SEctZ1BWc2otMElod0Z5Nld5MjRVdUU4bUxaeHg0YkMzQXNraC03dkktRGRWOE9QT3BNZ1Yzb0pQaksxbFl1SnAwMmJuQ21KdE9TTlRNYWRJSWRqVGFsUHdWWg?oc=5">Bitcoin, Ethereum, XRP Fall After Trump Iran Ultimatum. Why Crypto’s Tied to the War. - Barron&#x27;s</a></h3>
+  <p class="summary">Bitcoin, Ethereum, XRP Fall After Trump Iran Ultimatum. Why Crypto’s Tied to the War. Barron&#x27;s</p>
   <div class="source">Google News</div>
 </div>
 <div class="story">
   <h3><a href="https://news.google.com/rss/articles/CBMi9gFBVV95cUxORFNadXpqQzdXdW15YVlyUmtOTmgxVUpsUWdHQmV5dmxQR1NJdUZJUXZzRlZ6M1M1UnhscUltbVY3d2NKTjFGdG9QYURuSUVwdHpjNjRZbTMxQnQ5ZnRKLWxlcHZxbWk4cWlLTV9qSmstWHlYVlN3NnlvMDVzY0FHRE1rWG9NS3Y0YkJxSEd1ZUI1TGZlVVFTYXJjX2w5d0RFSjRUdmloNlI0a3NqM2tjb05QSUVueThtaUVGRHlpM2JIWnhRcHFFZUZKZkNpSF9JNUFwV3hja2NSd2hlT0ZISmNWUF96NEU4dWVpTExrMVU2MDlIVnfSAfsBQVVfeXFMTnBSVzZtNGFpUElXemtuSEZfdmZEbkx0d25vdG0zLUpIdlZ4U2JKNlRBTUdSdkIyZTBnNlp3UjNuQXp4MExtek1qZ3Zza2lFNkRiVm1pQjFBQ0FHNWNlVGxXUHVXVGFhSU5LVjhzR29IX1E2WFpROHk5MXU4dGllV0xCNlE5ZVNtczdlZHZ0TTFPeTVjVldRVE1oUHdWalY2NXVLSkFhRlhiUFNjMlBBLXNiRHRGQjFfR3dQLUJobDhsNEVvMmhqbzJoeUtrdXRob2Q3OFYtckQtckNUbXZScHVZWGtMQWhTb2RFT1dsaVg5MWxmMk9PUG04N28?oc=5">Top 3 Price Prediction: Bitcoin, Ethereum, Ripple – BTC, ETH and XRP bears tighten grip as key supports crack - FXStreet</a></h3>
-  <div class="summary">Top 3 Price Prediction: Bitcoin, Ethereum, Ripple – BTC, ETH and XRP bears tighten grip as key supports crack FXStreet</div>
+  <p class="summary">Top 3 Price Prediction: Bitcoin, Ethereum, Ripple – BTC, ETH and XRP bears tighten grip as key supports crack FXStreet</p>
   <div class="source">Google News</div>
 </div>
 </section>
@@ -238,18 +244,18 @@
 <section>
   <h2>AI / Tech</h2>
 <div class="story">
-  <h3><a href="https://rz01.org/eu-migration/">Migrating to the EU</a></h3>
-  
-  <div class="source">Hacker News</div>
-</div>
-<div class="story">
   <h3><a href="https://github.com/antithesishq/bombadil">Bombadil: Property-based testing for web UIs by Antithesis</a></h3>
   
   <div class="source">Hacker News</div>
 </div>
 <div class="story">
-  <h3><a href="https://techcrunch.com/2026/03/22/the-sec-drops-its-four-year-old-investigation-into-ev-startup-faraday-future/">The SEC drops its four-year-old investigation into EV startup Faraday Future</a></h3>
-  <div class="summary">After four years, and multiple subpoenas and depositions, the beleaguered startup has dodged yet another bullet.</div>
+  <h3><a href="https://rz01.org/eu-migration/">Migrating to the EU</a></h3>
+  
+  <div class="source">Hacker News</div>
+</div>
+<div class="story">
+  <h3><a href="https://techcrunch.com/2026/03/23/federal-immigration-agents-filmed-making-airport-arrests-as-trump-calls-in-ice-to-ease-security-line-delays/">Federal immigration agents filmed making airport arrests as Trump calls in ICE to ease security line delays</a></h3>
+  <p class="summary">The Trump administration has deployed ICE agents to over a dozen U.S. airports amid an ongoing federal shutdown that&#x27;s causing long wait times. Eyewitnesses have already recorded at least one arrest in San Francisco&#x27;s airport.</p>
   <div class="source">TechCrunch</div>
 </div>
 </section>
@@ -260,17 +266,17 @@
   <h2>비즈니스</h2>
 <div class="story">
   <h3><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNTU43NEplLVc4bHV5ZWdsT0NGRDdpSzJuRE1nYzdqczZVaVcteHh2NnM4WEhEblpUQ1hlWFI3dEY2M082SnktYVFuOFI0TEhmNlBCTkVoeGt1OUVDbi1tZ2RMOGFDT2UyQ0t2VWh3Q0NWRWZFT0liSEE3RTdCY19aSHBCTllaX0N1bFBOaFJBdW5UN3FDM0V0czF4dUk0QjZhM0llQkRB?oc=5">OpenAI to nearly double workforce to 8,000 by end-2026, FT reports - Reuters</a></h3>
-  <div class="summary">OpenAI to nearly double workforce to 8,000 by end-2026, FT reports Reuters</div>
+  <p class="summary">OpenAI to nearly double workforce to 8,000 by end-2026, FT reports Reuters</p>
   <div class="source">Reuters</div>
 </div>
 <div class="story">
   <h3><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxOZmlaQnozTEZ2VXM2REw4Z2ZDZktTeVh1M1NJVzNUaWV0VjNabkIwS3NSWE40Z2d5Tjd0R0tBOWQtaWk5RVFWS3NPMDg1RWpaSnczVm9kOEdwdlNMSklpbXBMOXg5WnhtR1B0Y0Q3Q1BPVjYyc21oVmtwdHI5U2RSM3lUOF9NWnkyaGJCcVBaeDhvR0hfemNPdDNhU1FZV2RId1hsYmZvajFHcTh0eW52N29vcWdDVzk2dzlNZG9odlNidnkwdVhwVmlTMS0?oc=5">Alibaba launches latest agentic AI platform with international unit&#x27;s Accio Work - Reuters</a></h3>
-  <div class="summary">Alibaba launches latest agentic AI platform with international unit&#x27;s Accio Work Reuters</div>
+  <p class="summary">Alibaba launches latest agentic AI platform with international unit&#x27;s Accio Work Reuters</p>
   <div class="source">Reuters</div>
 </div>
 <div class="story">
   <h3><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE05UDFVMDNrVERqYkdxOFFOZUxadEhSSkktQVJfUU1sX1ZGWnk3Z1NqaWtqRlFpekM3V3JOeF9xWmRoNlZqUlhGNUl4Q3Q0ZWwyd3JvTkJPLWNUS05IRGxsekszTWRrd2RwMUdYTmVQUGxQeEx5akdiY0dJVUFMUQ?oc=5">Iran war deals new blow to Europe&#x27;s industrial heartland - Reuters</a></h3>
-  <div class="summary">Iran war deals new blow to Europe&#x27;s industrial heartland Reuters</div>
+  <p class="summary">Iran war deals new blow to Europe&#x27;s industrial heartland Reuters</p>
   <div class="source">Reuters</div>
 </div>
 </section>
@@ -281,17 +287,17 @@
   <h2>한국</h2>
 <div class="story">
   <h3><a href="https://en.yna.co.kr/view/AEN20260323011851315">(LEAD) Trump says U.S., Iran had &#x27;productive&#x27; talks over war resolution, delays strikes on Iran power plants for 5 days</a></h3>
-  <div class="summary">WASHINGTON, March 23 (Yonhap) -- U.S. President Donald Trump said Monday that th...</div>
+  <p class="summary">WASHINGTON, March 23 (Yonhap) -- U.S. President Donald Trump said Monday that th...</p>
   <div class="source">Yonhap</div>
 </div>
 <div class="story">
   <h3><a href="https://en.yna.co.kr/view/AEN20260323011251320">(LEAD) Putin congratulates N.K.&#x27;s Kim on reelection, voices hope for closer ties</a></h3>
-  <div class="summary">SEOUL, March 23 (Yonhap) -- Russian President Vladimir Putin has congratulated N...</div>
+  <p class="summary">SEOUL, March 23 (Yonhap) -- Russian President Vladimir Putin has congratulated N...</p>
   <div class="source">Yonhap</div>
 </div>
 <div class="story">
   <h3><a href="https://en.yna.co.kr/view/AEN20260323011800315">Trump says U.S., Iran had &#x27;productive&#x27; talks over war resolution, delays strikes on Iran power plants for 5 days</a></h3>
-  <div class="summary">WASHINGTON, March 23 (Yonhap) -- U.S. President Donald Trump said Monday that th...</div>
+  <p class="summary">WASHINGTON, March 23 (Yonhap) -- U.S. President Donald Trump said Monday that th...</p>
   <div class="source">Yonhap</div>
 </div>
 </section>
