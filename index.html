@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Daily</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #faf9f6;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 32px 0 20px;
+    border-bottom: 3px double #1a1a1a;
+    margin-bottom: 24px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  header .date {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+  }
+
+  header .tagline {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .intro {
+    font-style: italic;
+    color: #444;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 0 8px;
+  }
+
+  section {
+    margin-bottom: 28px;
+  }
+
+  section h2 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  .story {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .story:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .story h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+
+  .story h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .story h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .story .summary {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .story .source {
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Crypto prices bar */
+  .crypto-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .crypto-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .crypto-card .symbol {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  .crypto-card .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 2px 0;
+  }
+
+  .crypto-card .change {
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  .crypto-card .change.up { color: #16a34a; }
+  .crypto-card .change.down { color: #dc2626; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 24px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 0 40px;
+    border-top: 3px double #1a1a1a;
+    margin-top: 20px;
+  }
+
+  footer .sign-off {
+    font-style: italic;
+    color: #444;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  footer .credit {
+    font-size: 0.72rem;
+    color: #aaa;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 0 16px; }
+    header h1 { font-size: 1.7rem; }
+    .story h3 { font-size: 1rem; }
+    .crypto-bar { gap: 8px; }
+    .crypto-card { padding: 8px 10px; }
+    .crypto-card .price { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Genesis Daily</h1>
+  <div class="date">2026년 3월 23일 월요일</div>
+  <div class="tagline">Your Morning Intelligence Brief</div>
+</header>
+
+<p class="intro">좋은 아침입니다, Founder. 오늘의 브리핑을 준비했습니다.</p>
+
+<!-- CRYPTO SECTION -->
+<section>
+  <h2>Crypto</h2>
+  <div class="crypto-bar">
+    <div class="crypto-card">
+      <div class="symbol">BTC</div>
+      <div class="price">$67,432</div>
+      <div class="change up">+2.4%</div>
+    </div>
+    <div class="crypto-card">
+      <div class="symbol">ETH</div>
+      <div class="price">$3,521</div>
+      <div class="change down">-0.8%</div>
+    </div>
+    <div class="crypto-card">
+      <div class="symbol">SOL</div>
+      <div class="price">$142.30</div>
+      <div class="change up">+5.1%</div>
+    </div>
+    <div class="crypto-card">
+      <div class="symbol">ADA</div>
+      <div class="price">$0.58</div>
+      <div class="change up">+1.2%</div>
+    </div>
+  </div>
+
+  <div class="story">
+    <h3>Bitcoin ETF inflows hit record $1.2B in single day</h3>
+    <div class="summary">Institutional demand continues to surge as spot Bitcoin ETFs see unprecedented capital inflows.</div>
+    <div class="source">CoinDesk</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AI / TECH SECTION -->
+<section>
+  <h2>AI / Tech</h2>
+  <div class="story">
+    <h3>Placeholder headline for AI/Tech news</h3>
+    <div class="summary">Summary of the article goes here, one or two lines maximum.</div>
+    <div class="source">Hacker News</div>
+  </div>
+  <div class="story">
+    <h3>Another tech headline appears here</h3>
+    <div class="summary">Brief description of the story, written for quick scanning.</div>
+    <div class="source">TechCrunch</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BUSINESS SECTION -->
+<section>
+  <h2>비즈니스</h2>
+  <div class="story">
+    <h3>Placeholder business headline</h3>
+    <div class="summary">One-line summary of what happened and why it matters.</div>
+    <div class="source">Reuters</div>
+  </div>
+  <div class="story">
+    <h3>Market-moving story here</h3>
+    <div class="summary">Brief context on the business news.</div>
+    <div class="source">Yahoo Finance</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- KOREA SECTION -->
+<section>
+  <h2>한국</h2>
+  <div class="story">
+    <h3>Korea news headline placeholder</h3>
+    <div class="summary">Summary of Korean news with relevant context.</div>
+    <div class="source">Korea Herald</div>
+  </div>
+  <div class="story">
+    <h3>Another Korea story</h3>
+    <div class="summary">Brief summary for quick reading.</div>
+    <div class="source">Yonhap</div>
+  </div>
+</section>
+
+<footer>
+  <div class="sign-off">오늘도 좋은 하루 되세요.</div>
+  <div class="credit">Curated by Genesis for @3amfounder</div>
+</footer>
+
+</body>
+</html>
