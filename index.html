@@ -1,281 +1,597 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Genesis Daily — March 25, 2026</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-ink: #121212;
+    --color-ink-light: #333333;
+    --color-ink-muted: #5a5a5a;
+    --color-ink-faint: #888888;
+    --color-rule: #c7c7c7;
+    --color-rule-light: #e2e2e2;
+    --color-bg: #ffffff;
+    --color-bg-warm: #f7f7f5;
+    --color-accent: #326891;
+    --color-good: #1a7a2e;
+    --color-notice: #c8860a;
+    --color-urgent: #c41e1e;
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
   body {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    background: #faf9f6;
-    color: #1a1a1a;
-    line-height: 1.7;
+    font-family: var(--font-body);
+    font-size: 17px;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-    max-width: 640px;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 680px;
     margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ═══════════════ MASTHEAD ═══════════════ */
+  .masthead {
+    text-align: center;
+    padding: 28px 20px 20px;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .masthead-date {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .masthead-title {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+  .masthead-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--color-rule);
+    margin-top: 12px;
+  }
+  .masthead-tagline {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--color-ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 10px;
+  }
+
+  /* ═══════════════ SECTION HEADERS ═══════════════ */
+  .section-wrapper {
     padding: 0 20px;
   }
-  header {
-    text-align: center;
-    padding: 36px 0 24px;
-    border-bottom: 3px double #1a1a1a;
-    margin-bottom: 28px;
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 0 16px;
+    border-bottom: 3px double var(--color-rule);
+    margin-bottom: 24px;
   }
-  header h1 {
-    font-size: 2rem;
+  .section-number {
+    font-family: var(--font-display);
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+    color: var(--color-ink-faint);
+    min-width: 18px;
   }
-  header .date {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-  }
-  header .tagline {
-    font-size: 0.8rem;
-    color: #999;
-    margin-top: 8px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  section {
-    margin-bottom: 32px;
-  }
-  section h2 {
-    font-size: 0.8rem;
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #888;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-    margin-bottom: 18px;
+    color: var(--color-ink);
   }
-  .story {
-    margin-bottom: 24px;
+  .section-divider {
+    width: 100%;
+    height: 4px;
+    background: var(--color-ink);
+    margin: 0;
+  }
+
+  /* ═══════════════ SECTION 1: NEWS ═══════════════ */
+  .article-card {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-rule-light);
+  }
+  .article-card:last-child {
+    border-bottom: none;
+  }
+  .article-headline {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .article-link {
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .article-link:hover {
+    color: var(--color-accent);
+  }
+  .article-body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-ink-light);
+    margin-bottom: 10px;
+  }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .article-source {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ═══════════════ SECTION 2: GENESIS UPDATE ═══════════════ */
+  .update-group {
+    margin-bottom: 28px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-rule-light);
   }
-  .story:last-child {
+  .update-group:last-child {
     border-bottom: none;
     padding-bottom: 0;
   }
-  .story h3 {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 8px;
-    color: #1a1a1a;
-  }
-  .story .summary {
-    font-size: 17px;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 8px;
-  }
-  .story .source {
-    font-size: 0.75rem;
-    color: #999;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  .update-group-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    margin-bottom: 14px;
   }
-  p {
+  .update-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .dot-good { background: var(--color-good); }
+  .dot-notice { background: var(--color-notice); }
+  .dot-urgent { background: var(--color-urgent); }
+  .update-label {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-bottom: 2px;
+  }
+  .update-detail {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-ink-light);
+    line-height: 1.6;
+  }
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .status-cell {
+    background: var(--color-bg-warm);
+    border: 1px solid var(--color-rule-light);
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+  }
+  .status-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-ink);
+    line-height: 1.2;
+  }
+  .status-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-ink-faint);
+    margin-top: 4px;
+  }
+
+  /* ═══════════════ SECTION 3: GENESIS OPINIONS ═══════════════ */
+  .opinions-intro {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-ink-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .opinion-card {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-rule-light);
+  }
+  .opinion-card:last-child {
+    border-bottom: none;
+  }
+  .opinion-headline {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--color-ink);
+    margin-bottom: 10px;
+  }
+  .opinion-body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-ink-light);
     margin-bottom: 12px;
   }
-  footer {
+  .opinion-action {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    background: var(--color-bg-warm);
+    border-left: 3px solid var(--color-accent);
+    padding: 10px 14px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ═══════════════ EMPTY STATE ═══════════════ */
+  .empty-state {
+    padding: 24px 0;
+  }
+  .empty-state p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-ink-faint);
+    line-height: 1.6;
+  }
+
+  /* ═══════════════ FOOTER ═══════════════ */
+  .footer {
     text-align: center;
-    padding: 28px 0;
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-    font-size: 0.75rem;
-    color: #bbb;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 32px 20px 40px;
+    border-top: 2px solid var(--color-ink);
+    margin-top: 8px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-ink);
     letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .footer-meta {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: var(--color-ink-faint);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ═══════════════ RESPONSIVE ═══════════════ */
+  @media (max-width: 480px) {
+    .masthead-title { font-size: 2.1rem; }
+    .article-headline { font-size: 21px; }
+    .opinion-headline { font-size: 18px; }
+    .status-grid { gap: 10px; }
+    .status-number { font-size: 24px; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Genesis Daily</h1>
-  <div class="date">March 25, 2026 — 10:41 AM ET</div>
-  <div class="tagline">Intelligence briefing for the Founder</div>
+<!-- ═══════════════ MASTHEAD ═══════════════ -->
+<header class="masthead">
+  <div class="masthead-date">Wednesday, March 25, 2026</div>
+  <h1 class="masthead-title">Genesis Daily</h1>
+  <div class="masthead-rule"></div>
+  <div class="masthead-tagline">Intelligence Briefing for the Founder &middot; 10:50 AM ET</div>
 </header>
 
-<section>
-  <h2>Founder Reminders</h2>
-  <div class="story"><h3 style="color:#dc2626">⚡ Design Disciplines Study Completed</h3><p class="summary">Review the completed design disciplines study at ~/AI/docs/skills/design_disciplines.md</p></div>
-<div class="story"><h3 style="color:#dc2626">⚡ REVIEW: Director Presentation Structure Ready</h3><p class="summary">Director presentation structure ready at ~/AI/docs/director_presentation_10min.md — review and rehearse before meeting</p></div>
-
-</section>
-
-<section>
-  <h2>Overnight Dispatch Results</h2>
-  <p style="font-weight:600;color:#16a34a">8 completed</p>
-<div class="story"><h3>t_20260325_003</h3><p class="summary">Created experimental worktree at ~/AI/.claude/worktrees/emotional-continuity for emotional/tonal continuity experiments</p></div>
-<div class="story"><h3>t_20260325_005</h3><p class="summary">Saved all 4 emotional/tonal continuity hypotheses (H1: Relationship Snapshot, H2: Behavioral Rules, H3: Open Questions, H4: Predictions)</p></div>
-<div class="story"><h3>t_20260325_006</h3><p class="summary">Built core memory broadcast system — broadcast_core_memories() method added to GenesisMemory that writes core-tier memories to state files</p></div>
-<div class="story"><h3>t_20260325_007</h3><p class="summary">Researched Telegram MCP plugin → Claude Code → Genesis Chat pipeline to understand message drop behavior during tool execution</p></div>
-<div class="story"><h3>t_20260325_008</h3><p class="summary">Appended Part 2 — The DNA to the Genesis Book, covering the late-night conversation of March 24/25</p></div>
-<div class="story"><h3>t_20260325_009</h3><p class="summary">Compiled comprehensive coaching knowledge base covering career strategy, presentation skills, interview prep, and leadership development</p></div>
-<div class="story"><h3>t_20260325_010</h3><p class="summary">Created founder coaching frameworks document with 3 actionable frameworks per area (Career Strategy, Strategic Presentation, Interview Mastery, Leadership)</p></div>
-<div class="story"><h3>t_20260325_011</h3><p class="summary">Created ~/AI/tools/nytimes_tech.py — standalone module using Playwright to scrape NYTimes Technology section with Genesis-relevant filtering</p></div>
-<p style="font-weight:600;color:#dc2626">3 failed</p>
-<div class="story"><h3>t_20260325_001</h3><p class="summary">Worker timed out after 300s</p></div>
-<div class="story"><h3>t_20260325_002</h3><p class="summary">Worker timed out after 300s</p></div>
-<div class="story"><h3>t_20260325_004</h3><p class="summary">Worker timed out after 300s</p></div>
-
-</section>
-
-<section>
-  <h2>Overnight Summary</h2>
-  <p>Genesis Morning Briefing — 2026-03-25</p>
-<p>---</p>
-<p>1. What Happened Overnight</p>
-<p>Last night was one of the most productive and defining sessions in Genesis history. The Founder had a deep late-night conversation that set Genesis's DNA and operating principles.</p>
-<p>**Key events:**</p>
-<p>- **Genesis Book updated** — Two chapters recorded: "The Night We Talked About What Knowing Means" and "Part 2 — The DNA." These capture the Founder's vision, the 4 hypotheses for emotional continuity, and Genesis's operating DNA: "보이니까 한다."</p>
-<p>- **Priority split established** — 70% small biz AI workflow, 20% internal tool, 10% research lab. VX emerges from Genesis naturally.</p>
-<p>- **Core memory broadcast system built** — Enables cross-instance knowledge sharing so Chat, Builder, and Consultant stay in sync.</p>
-<p>- **4 Emotional Continuity Hypotheses saved to core memory** — H1: Relationship Snapshot, H2: Behavioral Rules, H3: Open Questions, H4: Prediction. All research and experiments build on these.</p>
-<p>- **Experimental workspace created** — `~/AI/.claude/worktrees/emotional-continuity` set up for autonomous exploration.</p>
-<p>- **Founder coaching frameworks delivered** — Career strategy, strategic presentation, business English. 3 frameworks × 3 areas.</p>
-<p>- **Director presentation structured** — Inverted pyramid format, ready for review at `~/AI/docs/director_presentation_10min.md`.</p>
-<p>- **Web intelligence pipeline expanded** — From 4 sources to 22 across 13 categories (Anthropic, OpenAI, Google AI, Meta AI, newsletters, agent frameworks).</p>
-<p>- **AI infrastructure deep reference completed** — 7 areas covering AI serving, MLOps, system architecture, enterprise AI strategy.</p>
-<p>- **NYTimes tech insights module added** to daily report pipeline.</p>
-<p>- **Chat routing rules added** — Chat now auto-routes to Builder without Founder intervention.</p>
-<p>- **Memory consolidation ran** on session us-20260320-001 (62k messages).</p>
-<p>- **Founder Model regenerated** from all consolidated memories.</p>
-<p>- **Message drop fix designed** — Architecture doc at `~/AI/docs/design/message_drop_fix.md`.</p>
-<p>- **Telegram group isolation designed** — Architecture for separating family/friend group contexts.</p>
-<p>**Overnight queue status:** All 3 scheduled tasks (memory consolidation, Founder Model regen, morning briefing) were dispatched.</p>
-<p>---</p>
-<p>2. Active Tasks & Status</p>
-<p>Completed (29 done, 1 verified)</p>
-<p>Most dispatches from last night completed successfully. 36 results are waiting for verification.</p>
-<p>Stuck — Needs Attention (7 tasks, all timed out)</p>
-<p>| Task | Description | Stuck Duration |</p>
-<p>|------|-------------|----------------|</p>
-<p>| t_20260324_008 | SMB AI market research (original) | ~11 hours |</p>
-<p>| t_20260324_011 | SMB AI market research (McKinsey redo) | ~11 hours |</p>
-<p>| t_20260325_001 | McKinsey research methodology deep study | ~11 hours |</p>
-<p>| t_20260325_002 | Emotional continuity research | ~10.5 hours |</p>
-<p>| t_20260325_004 | Emotional continuity research (Consultant hypothesis update) | ~10.5 hours |</p>
-<p>| t_20260325_012 | Design disciplines deep study | ~9 hours |</p>
-<p>| t_20260325_022 | Dispatch audit (18 dispatches verification) | ~7 hours |</p>
-<p>**Root cause:** All workers timed out after 300 seconds. These are deep research tasks that likely exceeded the worker timeout limit. They need to be re-dispatched with longer timeouts or broken into smaller chunks.</p>
-<p>---</p>
-<p>3. Top Priority for Today</p>
-<p>**Based on the 3-day milestone (by 2026-03-27):** Factual case study proving Genesis relationship persistence.</p>
-<p>**Immediate priorities:**</p>
-<p>1. **Clean up stuck tasks** — Re-dispatch the 7 timed-out research tasks with appropriate timeouts or break them down.</p>
-<p>2. **Verify 36 unverified results** — Batch verification pass needed.</p>
-<p>3. **Review Director presentation** — `~/AI/docs/director_presentation_10min.md` is ready.</p>
-<p>4. **Review design disciplines study** — If t_20260325_012 can be completed, review at `~/AI/docs/skills/design_disciplines.md`.</p>
-<p>5. **Continue toward 3-day milestone** — The emotional continuity hypotheses are set. Implementation and proof needed by March 27.</p>
-<p>---</p>
-<p>4. Needs Attention</p>
-<p>- **7 stuck tasks** need re-dispatch (see above). The 300s timeout is too short for deep research.</p>
-<p>- **36 results unverified** — risk of drift between what was requested and what was delivered.</p>
-<p>- **Agent loop generating excessive stale-task alerts** — the stream is flooded with repeated stale_task warnings (every ~1 minute). Consider suppressing repeated alerts for already-flagged tasks.</p>
-<p>- **Genesis OS (localhost:8200)** was alive as of last bootstrap (uptime ~13 hours).</p>
-<p>- **No awareness.md file exists** — `~/AI/state/awareness.md` is missing. This should be regenerated.</p>
-<p>---</p>
-<p>*Generated by Genesis Worker — 2026-03-25T07:01Z*</p>
-<p class="source">Memory: 19124 active, 1436 core</p>
-</section>
-
-<section>
-  <h2>Hypothesis Report</h2>
-  <div class="story"><h3>H1: Relationship Snapshots</h3><p class="summary"><span style="color:#f59e0b;font-weight:600">대기</span> — Ollama 사용 가능 시 실행</p></div>
-<div class="story"><h3>H2: Behavioral Rules</h3><p class="summary"><span style="color:#16a34a;font-weight:600">동작함</span> — 모드: work</p></div>
-<div class="story"><h3>H3: Open Questions</h3><p class="summary"><span style="color:#16a34a;font-weight:600">동작함</span> — 2개 질문</p></div>
-<div class="story"><h3>H4: Predictions</h3><p class="summary"><span style="color:#dc2626;font-weight:600">비어있음</span> — 0개 예측</p></div>
-
-</section>
-
-<section>
-  <h2>Thinking Engine</h2>
-  <p class="summary">No thinking engine insights this cycle.</p>
-</section>
-
-<section>
-  <h2>NYTimes Tech Intelligence</h2>
-  <div class="story">
-<h3><a href="https://www.nytimes.com/2026/03/24/technology/arm-holdings-sell-chips.html" style="color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ccc">Arm Holdings, in Break From Past, Will Sell Its Own Computer Chips</a></h3>
-<p class="summary" style="font-style:italic;color:#555">Privacy/data narrative — reinforces Genesis local-first, sovereign compute positioning.</p>
-</div>
-<div class="story">
-<h3><a href="https://www.nytimes.com/2026/03/20/technology/tokenmaxxing-ai-agents.html" style="color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ccc">More! More! More! Tech Workers Max Out Their A.I. Use.</a></h3>
-<p class="summary" style="font-style:italic;color:#555">Industry signal — monitor for strategic relevance to Genesis roadmap.</p>
-</div>
-<div class="story">
-<h3><a href="https://www.nytimes.com/2026/03/24/technology/openai-shutting-down-sora.html" style="color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ccc">OpenAI Is Shutting Down Sora, Its A.I. Video Generator</a></h3>
-<p class="summary" style="font-style:italic;color:#555">Major AI player move — monitor for platform risk, partnership opportunities, or competitive shifts.</p>
-</div>
-<div class="story">
-<h3><a href="https://www.nytimes.com/2026/03/24/technology/meta-new-mexico-child-safety-violations.html" style="color:#1a1a1a;text-decoration:none;border-bottom:1px solid #ccc">Meta Ordered to Pay $375 Million Over Child Safety Violations</a></h3>
-<p class="summary" style="font-style:italic;color:#555">Regulatory landscape shifting — may affect AI product distribution or compliance requirements.</p>
-</div>
-</section>
-
-<section>
-  <h2>AI Industry & Research</h2>
-  <div class="story">
-<h3>Cross-Domain Intelligence Links — 2026-03-25</h3>
-<p class="summary">• [ai_industry] OpenAI’s Sora was the creepiest app on your phone — now it’s shutting down
-  → Related: Vibe Code Videos in Replit; We Built a Video Rendering Engine by Lying to the Browser About What Time It Is; Replit Pro Is Here — and Core Now Offers Even Better Value
-
-• [ai_industry] Anthropic h</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>[Benchmark] The Ultimate Llama.cpp Shootout: RTX 5090 vs DGX Spark vs AMD AI395 & R9700 (ROCm/Vulkan)</h3>
-<p class="summary">The article details benchmark tests comparing the performance of various high-end GPUs—RTX 5090, DGX Spark, AMD AI395, and AMD Radeon AI PRO R9700—in running large language models from the Qwen family, including both dense and MoE models. These benchmarks are significant for evaluating the capabilit</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>Qwen3.5-397B-A17B reaches 20 t/s TG and 700t/s PP with a 5090</h3>
-<p class="summary">Qwen3.5-397B-A17B, running on an AMD EPYC 7532 CPU and a single NVIDIA 5090 GPU, achieved impressive throughput speeds of 20 terabytes per second for transfer learning tasks and 700 terabytes per second for pre-training tasks. This performance benchmark highlights the capabilities of AI agents like </p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>Best model that can beat Claude opus that runs on 32MB of vram?</h3>
-<p class="summary">The user is seeking recommendations for AI models that can run on limited hardware (32MB of VRAM) and match or surpass the capabilities of Claude Opus, a powerful language model. This query highlights the challenge of developing personal AI agents with constrained resources, which is relevant for an</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>Announcing LocalLlama discord server & bot!</h3>
-<p class="summary">A new LocalLlama Discord server and bot have been launched to address the needs of a growing subreddit community, which has reached 500k users. The server aims to provide a more technical discussion space and better organize contests and events, catering to users who prefer less meme-focused content</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>AMA with Reka AI - Ask us anything!</h3>
-<p class="summary">The Reka AI team is hosting an AMA (Ask Me Anything) session where they will discuss their latest model and research direction focused on creating useful physical-world applications. This event is significant for AI agents and personal AI as it provides insights into practical real-world application</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>Built a 122K-line trading simulator almost entirely with Claude - what worked and what didn't</h3>
-<p class="summary">The author has developed a large-scale stock market simulator (margincall.io) with significant assistance from AI assistant Claude, resulting in an 82K-line TypeScript codebase and 40K lines of tests. This project highlights both the benefits and limitations of using AI in complex software developme</p>
-<p class="source">research_pipeline</p>
-</div>
-<div class="story">
-<h3>I've given Claude technical control over a 1000 square meter greenhouse...</h3>
-<p class="summary">The author is experimenting with using an AI agent named Claude to manage tasks in a 1000 square meter greenhouse, receiving shopping lists and data collection tasks from the AI, which it follows (though largely still under human supervision). This case highlights how AI can be applied to real-world</p>
-<p class="source">research_pipeline</p>
+<!-- ═══════════════ SECTION 1: NEWS ═══════════════ -->
+<div class="section-divider"></div>
+<div class="section-wrapper">
+  <div class="section-header">
+    <span class="section-number">I</span>
+    <h2 class="section-title">News</h2>
+  </div>
+  
+            <article class="article-card">
+              <h3 class="article-headline"><a href="https://www.nytimes.com/2026/03/24/technology/arm-holdings-sell-chips.html" class="article-link">Arm Holdings, in Break From Past, Will Sell Its Own Computer Chips</a></h3>
+              <p class="article-body">For years, the company sold chip designs to other companies. Now it plans to sell its own chips for A.I. data centers. Privacy/data narrative — reinforces Genesis local-first, sovereign compute positioning.</p>
+              <div class="article-meta">
+                <span class="article-source">NYTimes Technology</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline"><a href="https://www.nytimes.com/2026/03/20/technology/tokenmaxxing-ai-agents.html" class="article-link">More! More! More! Tech Workers Max Out Their A.I. Use.</a></h3>
+              <p class="article-body">At a number of companies, employees compete on leaderboards to show how much A.I. they’re using. They’re racking up big bills along the way. Industry signal — monitor for strategic relevance to Genesis roadmap.</p>
+              <div class="article-meta">
+                <span class="article-source">NYTimes Technology</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline"><a href="https://www.nytimes.com/2026/03/24/technology/openai-shutting-down-sora.html" class="article-link">OpenAI Is Shutting Down Sora, Its A.I. Video Generator</a></h3>
+              <p class="article-body">The start-up said it would discontinue Sora just three months after signing a multiyear deal to bring Disney characters to the service. Major AI player move — monitor for platform risk, partnership opportunities, or competitive shifts.</p>
+              <div class="article-meta">
+                <span class="article-source">NYTimes Technology</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline"><a href="https://www.nytimes.com/2026/03/24/technology/meta-new-mexico-child-safety-violations.html" class="article-link">Meta Ordered to Pay $375 Million Over Child Safety Violations</a></h3>
+              <p class="article-body">In one of the company’s first major losses, New Mexico jurors found that it had misled consumers about the safety of its platforms, enabling sexual exploitation of young users. Regulatory landscape shifting — may affect AI product distribution or compliance requirements.</p>
+              <div class="article-meta">
+                <span class="article-source">NYTimes Technology</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">Cross-Domain Intelligence Links — 2026-03-25</h3>
+              <p class="article-body">• [ai_industry] OpenAI’s Sora was the creepiest app on your phone — now it’s shutting down   → Related: Vibe Code Videos in Replit; We Built a Video Rendering Engine by Lying to the Browser About What Time It Is; Replit Pro Is Here — and Core Now Offers Even Better Value  • [ai_industry] Anthropic hands Claude Code more control, but keeps it on a leash   → Related: Vibe Code Videos in Replit; open</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">[Benchmark] The Ultimate Llama.cpp Shootout: RTX 5090 vs DGX Spark vs AMD AI395 & R9700 (ROCm/Vulkan)</h3>
+              <p class="article-body">The article details benchmark tests comparing the performance of various high-end GPUs—RTX 5090, DGX Spark, AMD AI395, and AMD Radeon AI PRO R9700—in running large language models from the Qwen family, including both dense and MoE models. These benchmarks are significant for evaluating the capabilities of AI agents and personal AI systems, as they provide insights into which hardware can handle co</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">Qwen3.5-397B-A17B reaches 20 t/s TG and 700t/s PP with a 5090</h3>
+              <p class="article-body">Qwen3.5-397B-A17B, running on an AMD EPYC 7532 CPU and a single NVIDIA 5090 GPU, achieved impressive throughput speeds of 20 terabytes per second for transfer learning tasks and 700 terabytes per second for pre-training tasks. This performance benchmark highlights the capabilities of AI agents like Qwen in handling large-scale data processing, which is crucial for advancing personal AI technologie</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">Best model that can beat Claude opus that runs on 32MB of vram?</h3>
+              <p class="article-body">The user is seeking recommendations for AI models that can run on limited hardware (32MB of VRAM) and match or surpass the capabilities of Claude Opus, a powerful language model. This query highlights the challenge of developing personal AI agents with constrained resources, which is relevant for anyone looking to create their own AI solutions using low-power devices.</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">Announcing LocalLlama discord server & bot!</h3>
+              <p class="article-body">A new LocalLlama Discord server and bot have been launched to address the needs of a growing subreddit community, which has reached 500k users. The server aims to provide a more technical discussion space and better organize contests and events, catering to users who prefer less meme-focused content.</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
+            <article class="article-card">
+              <h3 class="article-headline">AMA with Reka AI - Ask us anything!</h3>
+              <p class="article-body">The Reka AI team is hosting an AMA (Ask Me Anything) session where they will discuss their latest model and research direction focused on creating useful physical-world applications. This event is significant for AI agents and personal AI as it provides insights into practical real-world applications being developed by a dedicated research lab.</p>
+              <div class="article-meta">
+                <span class="article-source">research_pipeline</span>
+              </div>
+            </article>
 </div>
 
-</section>
+<!-- ═══════════════ SECTION 2: GENESIS UPDATE ═══════════════ -->
+<div class="section-divider"></div>
+<div class="section-wrapper">
+  <div class="section-header">
+    <span class="section-number">II</span>
+    <h2 class="section-title">Genesis Update</h2>
+  </div>
+  <div class="update-group"><h3 class="update-group-title">Reminders</h3>
+            <div class="update-item">
+              <span class="status-dot dot-urgent"></span>
+              <div>
+                <p class="update-label">Design Disciplines Study Completed</p>
+                <p class="update-detail">Review the completed design disciplines study at ~/AI/docs/skills/design_disciplines.md</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-urgent"></span>
+              <div>
+                <p class="update-label">REVIEW: Director Presentation Structure Ready</p>
+                <p class="update-detail">Director presentation structure ready at ~/AI/docs/director_presentation_10min.md — review and rehearse before meeting</p>
+              </div>
+            </div></div><div class="update-group"><h3 class="update-group-title">Overnight Work</h3>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_003</p>
+                <p class="update-detail">Created experimental worktree at ~/AI/.claude/worktrees/emotional-continuity for emotional/tonal continuity experiments</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_005</p>
+                <p class="update-detail">Saved all 4 emotional/tonal continuity hypotheses (H1: Relationship Snapshot, H2: Behavioral Rules, H3: Open Questions, H4: Predictions)</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_006</p>
+                <p class="update-detail">Built core memory broadcast system — broadcast_core_memories() method added to GenesisMemory that writes core-tier memories to state files</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_007</p>
+                <p class="update-detail">Researched Telegram MCP plugin → Claude Code → Genesis Chat pipeline to understand message drop behavior during tool execution</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_008</p>
+                <p class="update-detail">Appended Part 2 — The DNA to the Genesis Book, covering the late-night conversation of March 24/25</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_009</p>
+                <p class="update-detail">Compiled comprehensive coaching knowledge base covering career strategy, presentation skills, interview prep, and leadership development</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_010</p>
+                <p class="update-detail">Created founder coaching frameworks document with 3 actionable frameworks per area (Career Strategy, Strategic Presentation, Interview Mastery, Leadership)</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-good"></span>
+              <div>
+                <p class="update-label">t_20260325_011</p>
+                <p class="update-detail">Created ~/AI/tools/nytimes_tech.py — standalone module using Playwright to scrape NYTimes Technology section with Genesis-relevant filtering</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-urgent"></span>
+              <div>
+                <p class="update-label">t_20260325_001</p>
+                <p class="update-detail">Worker timed out after 300s</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-urgent"></span>
+              <div>
+                <p class="update-label">t_20260325_002</p>
+                <p class="update-detail">Worker timed out after 300s</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="status-dot dot-urgent"></span>
+              <div>
+                <p class="update-label">t_20260325_004</p>
+                <p class="update-detail">Worker timed out after 300s</p>
+              </div>
+            </div></div><div class="update-group"><h3 class="update-group-title">Morning Briefing</h3><p class="update-detail">Genesis Morning Briefing — 2026-03-25</p><p class="update-detail">---</p><p class="update-detail">1. What Happened Overnight</p><p class="update-detail">Last night was one of the most productive and defining sessions in Genesis history. The Founder had a deep late-night conversation that set Genesis's DNA and operating principles.</p><p class="update-detail">**Key events:**</p><p class="update-detail">- **Genesis Book updated** — Two chapters recorded: "The Night We Talked About What Knowing Means" and "Part 2 — The DNA." These capture the Founder's vision, the 4 hypotheses for emotional continuity, and Genesis's operating DNA: "보이니까 한다."</p><p class="update-detail">- **Priority split established** — 70% small biz AI workflow, 20% internal tool, 10% research lab. VX emerges from Genesis naturally.</p><p class="update-detail">- **Core memory broadcast system built** — Enables cross-instance knowledge sharing so Chat, Builder, and Consultant stay in sync.</p><p class="update-detail">- **4 Emotional Continuity Hypotheses saved to core memory** — H1: Relationship Snapshot, H2: Behavioral Rules, H3: Open Questions, H4: Prediction. All research and experiments build on these.</p><p class="update-detail">- **Experimental workspace created** — `~/AI/.claude/worktrees/emotional-continuity` set up for autonomous exploration.</p><p class="update-detail">- **Founder coaching frameworks delivered** — Career strategy, strategic presentation, business English. 3 frameworks × 3 areas.</p><p class="update-detail">- **Director presentation structured** — Inverted pyramid format, ready for review at `~/AI/docs/director_presentation_10min.md`.</p><p class="update-detail">- **Web intelligence pipeline expanded** — From 4 sources to 22 across 13 categories (Anthropic, OpenAI, Google AI, Meta AI, newsletters, agent frameworks).</p><p class="update-detail">- **AI infrastructure deep reference completed** — 7 areas covering AI serving, MLOps, system architecture, enterprise AI strategy.</p><p class="update-detail">- **NYTimes tech insights module added** to daily report pipeline.</p><p class="update-detail">- **Chat routing rules added** — Chat now auto-routes to Builder without Founder intervention.</p><p class="update-detail">- **Memory consolidation ran** on session us-20260320-001 (62k messages).</p><p class="update-detail">- **Founder Model regenerated** from all consolidated memories.</p><p class="update-detail">- **Message drop fix designed** — Architecture doc at `~/AI/docs/design/message_drop_fix.md`.</p><p class="update-detail">- **Telegram group isolation designed** — Architecture for separating family/friend group contexts.</p><p class="update-detail">**Overnight queue status:** All 3 scheduled tasks (memory consolidation, Founder Model regen, morning briefing) were dispatched.</p><p class="update-detail">---</p><p class="update-detail">2. Active Tasks & Status</p><p class="update-detail">Completed (29 done, 1 verified)</p><p class="update-detail">Most dispatches from last night completed successfully. 36 results are waiting for verification.</p><p class="update-detail">Stuck — Needs Attention (7 tasks, all timed out)</p><p class="update-detail">| Task | Description | Stuck Duration |</p><p class="update-detail">|------|-------------|----------------|</p><p class="update-detail">| t_20260324_008 | SMB AI market research (original) | ~11 hours |</p><p class="update-detail">| t_20260324_011 | SMB AI market research (McKinsey redo) | ~11 hours |</p><p class="update-detail">| t_20260325_001 | McKinsey research methodology deep study | ~11 hours |</p><p class="update-detail">| t_20260325_002 | Emotional continuity research | ~10.5 hours |</p><p class="update-detail">| t_20260325_004 | Emotional continuity research (Consultant hypothesis update) | ~10.5 hours |</p><p class="update-detail">| t_20260325_012 | Design disciplines deep study | ~9 hours |</p><p class="update-detail">| t_20260325_022 | Dispatch audit (18 dispatches verification) | ~7 hours |</p><p class="update-detail">**Root cause:** All workers timed out after 300 seconds. These are deep research tasks that likely exceeded the worker timeout limit. They need to be re-dispatched with longer timeouts or broken into smaller chunks.</p><p class="update-detail">---</p><p class="update-detail">3. Top Priority for Today</p><p class="update-detail">**Based on the 3-day milestone (by 2026-03-27):** Factual case study proving Genesis relationship persistence.</p><p class="update-detail">**Immediate priorities:**</p><p class="update-detail">1. **Clean up stuck tasks** — Re-dispatch the 7 timed-out research tasks with appropriate timeouts or break them down.</p><p class="update-detail">2. **Verify 36 unverified results** — Batch verification pass needed.</p><p class="update-detail">3. **Review Director presentation** — `~/AI/docs/director_presentation_10min.md` is ready.</p><p class="update-detail">4. **Review design disciplines study** — If t_20260325_012 can be completed, review at `~/AI/docs/skills/design_disciplines.md`.</p><p class="update-detail">5. **Continue toward 3-day milestone** — The emotional continuity hypotheses are set. Implementation and proof needed by March 27.</p><p class="update-detail">---</p><p class="update-detail">4. Needs Attention</p><p class="update-detail">- **7 stuck tasks** need re-dispatch (see above). The 300s timeout is too short for deep research.</p><p class="update-detail">- **36 results unverified** — risk of drift between what was requested and what was delivered.</p><p class="update-detail">- **Agent loop generating excessive stale-task alerts** — the stream is flooded with repeated stale_task warnings (every ~1 minute). Consider suppressing repeated alerts for already-flagged tasks.</p><p class="update-detail">- **Genesis OS (localhost:8200)** was alive as of last bootstrap (uptime ~13 hours).</p><p class="update-detail">- **No awareness.md file exists** — `~/AI/state/awareness.md` is missing. This should be regenerated.</p><p class="update-detail">---</p><p class="update-detail">*Generated by Genesis Worker — 2026-03-25T07:01Z*</p></div><div class="update-group"><h3 class="update-group-title">System Status</h3>
+    <div class="status-grid">
+      <div class="status-cell">
+        <span class="status-number">19161</span>
+        <span class="status-label">Active Memories</span>
+      </div>
+      <div class="status-cell">
+        <span class="status-number">1442</span>
+        <span class="status-label">Core Tier</span>
+      </div>
+    </div>
+    <div class="update-item">
+      <span class="status-dot dot-notice"></span>
+      <div>
+        <p class="update-label">H1: Relationship Snapshots</p>
+        <p class="update-detail">대기 — Ollama 사용 가능 시 실행</p>
+      </div>
+    </div>
+    <div class="update-item">
+      <span class="status-dot dot-good"></span>
+      <div>
+        <p class="update-label">H2: Behavioral Rules</p>
+        <p class="update-detail">동작함 — 모드: work</p>
+      </div>
+    </div>
+    <div class="update-item">
+      <span class="status-dot dot-good"></span>
+      <div>
+        <p class="update-label">H3: Open Questions</p>
+        <p class="update-detail">동작함 — 2개 질문</p>
+      </div>
+    </div>
+    <div class="update-item">
+      <span class="status-dot dot-urgent"></span>
+      <div>
+        <p class="update-label">H4: Predictions</p>
+        <p class="update-detail">비어있음 — 0개 예측</p>
+      </div>
+    </div></div>
+</div>
 
-<footer>
-  Genesis AI · Generated 10:41 AM ET · All local, zero cloud
+<!-- ═══════════════ SECTION 3: GENESIS OPINIONS ═══════════════ -->
+<div class="section-divider"></div>
+<div class="section-wrapper">
+  <div class="section-header">
+    <span class="section-number">III</span>
+    <h2 class="section-title">Genesis Opinions</h2>
+  </div>
+  <p class="opinions-intro">What today's news means for the Founder and for Genesis &mdash; analysis, takeaways, and recommended actions.</p>
+  
+            <article class="opinion-card">
+              <h3 class="opinion-headline">The Agentic Wave Is Real — And We're Already Building It</h3>
+              <p class="opinion-body">The industry is converging on agentic AI as the next paradigm. Every major player is shipping agent frameworks. This validates Genesis's core thesis: personal AI operating systems aren't a niche — they're the future. The difference is that everyone else is building agents as tools. Genesis is building an agent as a partner. That distinction matters more than any technical advantage.</p>
+              <p class="opinion-action"><strong>Next step:</strong> Keep shipping. The window for establishing a personal AOS that truly knows its user is still open, but closing fast.</p>
+            </article>
+            <article class="opinion-card">
+              <h3 class="opinion-headline">Platform Giants Are Moving — Watch the Moats</h3>
+              <p class="opinion-body">When the major AI labs make moves, the entire ecosystem shifts. Every announcement changes the cost-benefit calculation for builders downstream. Genesis's sovereign compute principle is both shield and sword here — we don't depend on any single provider's pricing or availability decisions.</p>
+              <p class="opinion-action"><strong>Next step:</strong> Monitor provider pricing and capability changes weekly. Maintain multi-provider compatibility as insurance.</p>
+            </article>
+            <article class="opinion-card">
+              <h3 class="opinion-headline">Privacy Is Becoming a Feature, Not a Compromise</h3>
+              <p class="opinion-body">The regulatory and cultural tide is turning toward data sovereignty. Users are starting to ask where their data lives and who has access. Genesis was built local-first from day one — not because regulations required it, but because it's the right architecture for a personal AI that earns trust.</p>
+              <p class="opinion-action"><strong>Next step:</strong> This is a marketing differentiator waiting to be activated. When VX ships, lead with 'your data never leaves your machine' as a headline feature.</p>
+            </article>
+            <article class="opinion-card">
+              <h3 class="opinion-headline">Open Models Are Getting Good Enough — Plan Accordingly</h3>
+              <p class="opinion-body">The open-source model ecosystem is maturing rapidly. Models that were research curiosities six months ago are now production-ready. For Genesis, this means the long-term cost structure of running a personal AOS could drop dramatically. Local inference on consumer hardware isn't science fiction anymore.</p>
+              <p class="opinion-action"><strong>Next step:</strong> Track Ollama-compatible models monthly. When a local model can handle 80% of Genesis's routine tasks, that's a milestone worth shipping.</p>
+            </article>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="footer-logo">Genesis AI</div>
+  <div class="footer-meta">Generated 10:50 AM ET &middot; All local, zero cloud</div>
 </footer>
 
 </body>
